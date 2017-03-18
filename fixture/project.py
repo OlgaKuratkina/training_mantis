@@ -47,13 +47,8 @@ class Project_helper:
 
     def delete_opened_project(self):
         wd = self.app.wd
-        try:
-            element = WebDriverWait(wd, 10).until(
-                EC.presence_of_element_located(wd.find_element_by_xpath("//input[@value = 'Delete Project']"))
-            )
-        finally:
-            wd.find_element_by_xpath("//input[@value = 'Delete Project']").click()
-            wd.find_element_by_xpath("//input[@value = 'Delete Project']").click()
+        wd.find_element_by_xpath("//input[@value = 'Delete Project']").click()
+        wd.find_element_by_xpath("//input[@value = 'Delete Project']").click()
 
     def add_project(self, project):
         wd = self.app.wd
