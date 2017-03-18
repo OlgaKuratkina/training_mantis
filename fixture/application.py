@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from fixture.session import SessionHelper
+from fixture.project import Project_helper
 
 
 class Application:
@@ -16,6 +17,7 @@ class Application:
             raise ValueError("Can't recognize your browser %s" % browser)
         self.session = SessionHelper(self)
         self.base_url = base_url
+        self.project = Project_helper(self)
 
     def is_valid(self):
         try:

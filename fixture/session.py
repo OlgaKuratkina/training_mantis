@@ -33,7 +33,7 @@ class SessionHelper:
 
     def get_logged_username(self):
         wd = self.app.wd
-        return wd.find_element_by_css_selector("td.login-info-left span").text
+        return wd.find_element_by_xpath("//span[@class = 'label hidden-xs label-default arrowed']").text
 
     def ensure_login(self, username, password):
         if self.is_logged_in():
