@@ -42,13 +42,20 @@ class Project_helper:
         self.open_project_page()
         for elem in wd.find_elements_by_css_selector("tbody tr")[:-1]:
             if elem.find_elements_by_css_selector("td")[0].text == name:
-                elem.find_elements_by_css_selector("td")[0].click()
+                elem.find_elements_by_css_selector("td")[0].find_element_by_css_selector("a").click()
                 break
 
     def delete_opened_project(self):
         wd = self.app.wd
+        #wd.find_element_by_xpath("//form[@id='project-delete-form']//input[@type='submit']").click()
+        self.maxim()
         wd.find_element_by_xpath("//input[@value = 'Delete Project']").click()
         wd.find_element_by_xpath("//input[@value = 'Delete Project']").click()
+
+    def maxim(self):
+        wd = self.app.wd
+        wd.maximize_window()
+
 
     def add_project(self, project):
         wd = self.app.wd

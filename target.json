@@ -7,5 +7,11 @@
   {
   "user": "administrator",
   "password": "root1"
+},
+  "ftp":
+  {
+    "host": "localhost",
+  "username": "mantis",
+  "password": "mantis"
 }
 }

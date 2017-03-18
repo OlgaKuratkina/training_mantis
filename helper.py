@@ -20,12 +20,9 @@ ls = wd.find_elements_by_css_selector("tbody tr")
 #     name = elem.find_elements_by_css_selector("td")[0].text
 #     descr = elem.find_elements_by_css_selector("td")[4].text
 #     print(name, "", descr)
-app.project.open_project_by_name("6 TJoGam a")
+app.project.open_project_by_name("567890ззшгнеку45678ш9щз0")
+wd.maximize_window()
+wd.find_element_by_xpath("//form[@id='project-delete-form']//input[@type='submit']").click()
+wd.find_element_by_xpath("//input[@value = 'Delete Project']").click()
+print("")
 
-try:
-    element = WebDriverWait(wd, 10).until(
-        EC.presence_of_element_located(wd.find_element_by_xpath("//input[@value = 'Delete Project']"))
-    )
-finally:
-    wd.find_element_by_id("project-delete-form").click()
-    #wd.find_element_by_xpath("//input[@value = 'Delete Project']").click()
