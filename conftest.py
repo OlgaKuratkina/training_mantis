@@ -33,7 +33,7 @@ def config(request):
     return load_config(request.config.getoption("--target"))
 
 
-@pytest.fixture(scope="session", autouse=True)
+#@pytest.fixture(scope="session", autouse=True)
 def configure_server(request, config):
     install_server_configuration(config['ftp']['host'], config['ftp']['username'], config['ftp']['password'])
     def fin():

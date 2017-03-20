@@ -8,6 +8,7 @@ class SessionHelper:
     def login(self, username, password):
         wd = self.app.wd
         self.app.open_home_page()
+        self.maxim()
         wd.find_element_by_name("username").click()
         wd.find_element_by_name("username").clear()
         wd.find_element_by_name("username").send_keys(username)
@@ -27,6 +28,10 @@ class SessionHelper:
     def is_logged_in(self):
         wd = self.app.wd
         return len(wd.find_elements_by_link_text("Logout")) > 0
+
+    def maxim(self):
+        wd = self.app.wd
+        wd.maximize_window()
 
     def is_logged_in_as(self, username):
         return self.get_logged_username() == username

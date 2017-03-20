@@ -7,7 +7,7 @@ def random_user(prefix, maxlen):
     return prefix+"".join([random.choice(symb) for i in range(random.randrange(maxlen))])
 
 
-def signup_new_account(app):
+def test_signup_new_account(app):
     username = random_user("user_", 10)
     password = 'test'
     email = username + "@localhost"
