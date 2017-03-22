@@ -19,7 +19,7 @@ class SessionHelper:
 
     def logout(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("Logout").click()
+        wd.get('http://localhost/mantisbt-2.2.1/login_page.php')
 
     def ensure_logout(self):
         if self.is_logged_in():
@@ -38,7 +38,8 @@ class SessionHelper:
 
     def get_logged_username(self):
         wd = self.app.wd
-        return wd.find_element_by_xpath("//span[@class = 'label hidden-xs label-default arrowed']").text
+        self.maxim()
+        return wd.find_element_by_xpath("//span[@class = 'user-info']").text
 
     def ensure_login(self, username, password):
         if self.is_logged_in():
